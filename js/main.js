@@ -52,10 +52,10 @@ function war(){
 // compares value of the 2 cards to decide who wins or if its war also adds 8 points or what was left in the deck
     if (convertToNum(data.cards[0].value) > convertToNum(data.cards[1].value)){
       document.querySelector('h3').innerHTML = 'Player 1 wins!';
-      document.querySelector('#score1').textContent =  +document.querySelector('#score1').textContent + leftForWar // adds 8 or whats left to score
+      document.querySelector('#score1').textContent =  +document.querySelector('#score1').textContent + leftForWar + 2// adds 10 or whats left to score
     }else if (convertToNum(data.cards[0].value) < convertToNum(data.cards[1].value)){
       document.querySelector('h3').innerHTML = 'Player 2 wins!';
-      document.querySelector('#score2').textContent =  +document.querySelector('#score2').textContent + leftForWar // adds 8 or whats left to score
+      document.querySelector('#score2').textContent =  +document.querySelector('#score2').textContent + leftForWar + 2// adds 10 or whats left to score
     }else {
       document.querySelector('h3').innerHTML = 'WAR!!!!'
       leftForWar = warCount(data.remaining)
