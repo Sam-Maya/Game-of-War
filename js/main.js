@@ -36,6 +36,8 @@ function grabTwo(){
       document.querySelector('#score2').textContent =  +document.querySelector('#score2').textContent + 2 // adds 2 to score
     }else {
       document.querySelector('h3').innerHTML = 'WAR!!!!'
+      document.querySelector("#warbtn").style.display = "block" 
+      document.querySelector("#btn").style.display = "none"
       leftForWar = warCount(data.remaining)
     } 
   })
@@ -53,16 +55,21 @@ function war(){
     if (convertToNum(data.cards[0].value) > convertToNum(data.cards[1].value)){
       document.querySelector('h3').innerHTML = 'Player 1 wins!';
       document.querySelector('#score1').textContent =  +document.querySelector('#score1').textContent + leftForWar + 2// adds 10 or whats left to score
+      document.querySelector("#btn").style.display = "block" //toggles draw 2 button back on and hides war button
+      document.querySelector("#warbtn").style.display = "none" 
     }else if (convertToNum(data.cards[0].value) < convertToNum(data.cards[1].value)){
       document.querySelector('h3').innerHTML = 'Player 2 wins!';
       document.querySelector('#score2').textContent =  +document.querySelector('#score2').textContent + leftForWar + 2// adds 10 or whats left to score
+      document.querySelector("#btn").style.display = "block" //toggles draw 2 button back on and hides war button
+      document.querySelector("#warbtn").style.display = "none" 
     }else {
       document.querySelector('h3').innerHTML = 'WAR!!!!'
+      document.querySelector("#warbtn").style.display = "block" 
+      document.querySelector("#btn").style.display = "none"
       leftForWar = warCount(data.remaining)
     } 
   })
 } 
-
 
 // converts face cards to their number value
 function convertToNum(val){

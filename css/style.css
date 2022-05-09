@@ -37,15 +37,40 @@ h1{
 .button-section{
   display: flex;
   justify-content: center;
+  align-items: center;
   width: 100%;
   line-height: 5vh;
-  font-size: 3vh;
+  font-size: 2vh;
 }
-img{
-  display: block;
-  margin: 0 auto;
+.winner{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 5vh;
+  font-size: 4vh;
 }
-
+.cards{
+  display: flex;
+  width: 100%;
+  font-size: 2vh;
+}
+.players{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+.players h2, .players span{
+  display: flex;
+  justify-content: center;
+}
+@media not screen and (max-width : 1000px){
+  img{
+    display: flex;
+    margin: 0 auto;
+  }
+}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -57,4 +82,32 @@ header{
 a{
   text-decoration: none;
   color: white;
+}
+button {
+  padding: 1.3em 3em;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
+
+button:hover {
+  background-color: #05c71e;
+  box-shadow: 0px 15px 20px #068016;
+  color: #fff;
+  transform: translateY(-7px);
+}
+
+button:active {
+  transform: translateY(-1px);
+}
+
+#warbtn {
+  display: none;
 }
