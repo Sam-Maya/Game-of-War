@@ -1,13 +1,10 @@
 let deckId = ''
 let leftForWar = 0
-let node = document.querySelector('.flexbox-container')
-let clone = node.cloneNode(true)
 
 // grabbing new deck from API to play game with
 fetch('https://www.deckofcardsapi.com/api/deck/new/shuffle/?deck_count=1')
   .then(res => res.json()) // parse response as JSON
   .then(data => {
-    console.log(data)
     deckId = data.deck_id
   })
   .catch(err => {
@@ -26,7 +23,6 @@ function grabTwo(){
   fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=2`)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
-    console.log(data)
     document.querySelector('#card1').src = data.cards[0].image
     document.querySelector('#card2').src = data.cards[1].image
 // compares value of the 2 cards to decide who wins or if its war
@@ -52,7 +48,6 @@ function war(){
   fetch(`https://deckofcardsapi.com/api/deck/${deckId}/draw/?count=${leftForWar}`)
   .then(res => res.json()) // parse response as JSON
   .then(data => {
-    console.log(data)
     document.querySelector('#card1').src = data.cards[0].image
     document.querySelector('#card2').src = data.cards[1].image
 
@@ -99,7 +94,8 @@ function warCount(val){
   }else return 8
 }
 
-function isGameOver(val){ // checks to see if deck is out of cards
+// checks to see if deck is out of cards
+function isGameOver(val){ 
   if(val === 0){
     document.querySelector("#btn").style.display = "none"
     document.querySelector("#warbtn").style.display = "none"
@@ -111,7 +107,8 @@ function isGameOver(val){ // checks to see if deck is out of cards
   }
 }
 
-function seeWhoWon(){ // checks to see who won
+// checks to see who won
+function seeWhoWon(){ 
   let elems = document.getElementsByClassName('game')// hides the game
   for (let i=0; i < elems.length; i+=1){
     elems[i].style.display = 'none'
