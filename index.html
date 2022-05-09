@@ -21,25 +21,31 @@
 			<a href="https://samuelthedev.com/">Home</a>
 		</header>
 	<h1>WAR</h1>
-		<section class="button-section">
+		<section class="button-section game">
+			<button id="checkforwinner" type="button" name="checkwinner">Click To See Game Winner</button>
 			<button id="btn" type="button" name="button">Draw 2</button>
 			<button id="warbtn" type="button" name="warbutton">War!!!! Draw 8 with the last 2 cards going head to head</button>
 		</section>
-		<section class = "winner">
+		<section class = "winner game">
 			<h3></h3>
 		</section>
-		<section class = "cards">
+		<section class = "cards game">
 			<section class="players">
 				<h2>Player 1</h2>
-				<span id="score1">0</span>
+				<span id="score1" class="score">0</span>
 				<img id="card1" src="" alt="">
 			</section>
 			<section class="players">
 				<h2>Player 2</h2>
-				<span id="score2">0</span>
+				<span id="score2" class="score">0</span>
 				<img id="card2" src="" alt="">
 			</section>
-	 </section>
+		</section>
+		<section id="gameend">
+			<h2>The Winner Is</h2>
+			<span id="whowon"></span>
+			<button id="newgame" type="button" value="Refresh Page" onClick= "window.location.reload();">New Game</button>
+		</section>
 		<script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>

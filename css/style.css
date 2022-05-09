@@ -71,6 +71,20 @@ h1{
     margin: 0 auto;
   }
 }
+#gameend{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  line-height: 5vh;
+  font-size: 4vh;
+}
+#newgame{
+  margin-top: 2%;
+  line-height: 5vh;
+  font-size: 2vh;
+}
 
 /******************************************
 /* ADDITIONAL STYLES
@@ -110,4 +124,16 @@ button:active {
 
 #warbtn {
   display: none;
+}
+#checkforwinner{
+  display: none;
+}
+.game{
+  display: flex;
+}
+#gameend{
+  display: none;
+}
+.score{
+  display: flex;
 }
